@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (data.getCount() == 0) {
             setContentView(R.layout.activity_main);
-            username = this.findViewById(R.id.username);
-            password = this.findViewById(R.id.password);
-            register =(Button)findViewById(R.id.register);
+            username = findViewById(R.id.username);
+            password = findViewById(R.id.password);
+            register =findViewById(R.id.register);
             text= this.findViewById(R.id.heading);
             register.setOnClickListener(this);
             Intent intent =new Intent(this,LoginActivity.class);
@@ -50,8 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.register) {
             db = new Sqllitehelper(this);
             result = db.adddata(username.getText().toString(), password.getText().toString());
-            if (result)
+            if (result) {
                 Toast.makeText(this, "User registered succesfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+            }
 
             else
                 Toast.makeText(this, "User  not registered", Toast.LENGTH_SHORT).show();

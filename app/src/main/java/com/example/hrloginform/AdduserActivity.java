@@ -34,15 +34,12 @@ public class AdduserActivity extends AppCompatActivity implements View.OnClickLi
         age = findViewById(R.id.age);
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(this);
-     /*   Retrofit retrofit=new Retrofit.Builder().baseUrl("http://dummy.restapiexample.com/api/v1/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        api_helper=retrofit.create(apihelper.class);*/
+
     }
 
     private String[] Adddata() {
         final String[] res = new String[1];
-        //apiclass api_class = new apiclass(username.getText().toString(), Integer.parseInt(salary.getText().toString()), Integer.parseInt(age.getText().toString()));
+
         apihelper service = Retrofitinstance.getRetrofitInstance().create(apihelper.class);
         Call<apiclass> call = service.createdata(username.getText().toString(), Integer.parseInt(salary.getText().toString()), Integer.parseInt(age.getText().toString()));
 

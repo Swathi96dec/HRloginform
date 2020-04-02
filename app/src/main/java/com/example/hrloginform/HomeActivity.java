@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sqllite.Sqllitehelper;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     Button adduser, viewall;
@@ -26,10 +25,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.adduser) {
-            Sqllitehelper db= new Sqllitehelper(this);
             startActivity(new Intent(this,AdduserActivity.class));
 
         } else {
+
 
         }
     }

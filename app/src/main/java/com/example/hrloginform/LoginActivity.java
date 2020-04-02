@@ -3,7 +3,6 @@ package com.example.hrloginform;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +38,7 @@ public class LoginActivity  extends AppCompatActivity implements View.OnClickLis
             }
             else
             {
-                Toast.makeText(this, "Validation is  not correct", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Username and password are incorrect", Toast.LENGTH_LONG).show();
 
             }
 
