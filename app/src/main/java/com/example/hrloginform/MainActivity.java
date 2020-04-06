@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             register =findViewById(R.id.register);
             text= this.findViewById(R.id.heading);
             register.setOnClickListener(this);
-            Intent intent =new Intent(this,LoginActivity.class);
-            startActivity(intent);
 
         } else {
             Intent intent =new Intent(this,LoginActivity.class);

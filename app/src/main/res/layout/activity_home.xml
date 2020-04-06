@@ -19,4 +19,5 @@
         android:text="@string/ViewALL"
         android:id="@+id/ViewALL"
         />
+
 </LinearLayout>

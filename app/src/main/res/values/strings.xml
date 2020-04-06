@@ -10,5 +10,6 @@
     <string name="ViewALL">View ALL</string>
     <string name="salary">Salary</string>
     <string name="age">Age</string>
+    <string name="userslist">Users List</string>
 
 </resources>

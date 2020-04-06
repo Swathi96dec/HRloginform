@@ -28,6 +28,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,AdduserActivity.class));
 
         } else {
+            if(v.getId()==R.id.ViewALL)
+            {
+                startActivity(new Intent(this,EmployeelistActivity.class));
+
+            }
 
 
         }
