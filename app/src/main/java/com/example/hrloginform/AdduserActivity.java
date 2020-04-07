@@ -61,6 +61,10 @@ public class AdduserActivity extends AppCompatActivity implements View.OnClickLi
                 loadHomepage();
 
             }
+            else
+            {
+                Toast.makeText(AdduserActivity.this, response.message(), Toast.LENGTH_LONG).show();
+            }
 
         }
 
@@ -95,7 +99,7 @@ else {
                            //do something
                            LoadHomepagewithdelay();
                        }
-                   }, 20000 );
+                   }, 5000 );
 
                }
                else{

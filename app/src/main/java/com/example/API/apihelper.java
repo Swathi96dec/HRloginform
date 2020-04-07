@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 public interface apihelper {
     @GET("employees")
-    Call<List<apiclass>> getdata();
+    Call<apiclass> getdata();
     @FormUrlEncoded
     @POST("create")
    Call<apiclass>createdata(
