@@ -45,14 +45,14 @@ public class recycleviewadapter extends RecyclerView.Adapter<recycleviewadapter.
     public int getItemCount() {
         return employeelist.size();
     }
-     class employeeViewHolder extends RecyclerView.ViewHolder{
+     static class employeeViewHolder extends RecyclerView.ViewHolder{
 
         TextView name;
         TextView salary;
         TextView age;
 
 
-        public employeeViewHolder(@NonNull View itemView) {
+        employeeViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.employeename);
             salary=itemView.findViewById(R.id.salaryname);

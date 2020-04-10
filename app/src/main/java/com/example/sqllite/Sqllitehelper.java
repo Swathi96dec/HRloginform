@@ -45,37 +45,14 @@ public Sqllitehelper(@Nullable Context context)
     contentvalues.put(Dbconstants.password,Password);
 
     long result =database.insert(Dbconstants.tablename,null,contentvalues);
-    if(result==-1)
-        return false;
-
-    else
-        return true;
+        return result != -1;
 }
-    public boolean adduser(String Username, int salary ,int age ) {
-        SQLiteDatabase database = this.getWritableDatabase();
-        ContentValues contentvalues=new ContentValues();
-        contentvalues.put(Dbconstants.username,Username);
-        contentvalues.put(Dbconstants.salary,salary);
-        contentvalues.put(Dbconstants.age,age);
-
-        long result =database.insert(Dbconstants.employeetable,null,contentvalues);
-        if(result==-1)
-            return false;
-
-        else
-            return true;
-    }
-    public Cursor getallemployee() {
-        SQLiteDatabase database = this.getWritableDatabase();
-        return database.rawQuery("select * from employee",null);
-    }
-
 
 
     public Cursor checkdata(String Username, String Password ) {
         SQLiteDatabase database = this.getWritableDatabase();
-        String username=Username.toString().trim();
-        String password=Password.toString().trim();
+        String username= Username.trim();
+        String password= Password.trim();
          final String checkcreds="select * from users where username "+"= '"+ username+"'" +" and" +" password " + "= '"+ password + "'";
         return database.rawQuery(checkcreds,null);
 

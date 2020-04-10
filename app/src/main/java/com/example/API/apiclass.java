@@ -9,24 +9,8 @@ public class apiclass {
     private String status;
     public List<data> data=null;
 
-    public String getStatus() {
-        return status;
-    }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public List<apiclass.data> getData() {
-        return data;
-    }
-
-    public void setData(List<apiclass.data> data) {
-        this.data = data;
-    }
-
-
-    public class data {
+    public static class data {
         @SerializedName("employee_name")
          String name;
         @SerializedName("employee_salary")
