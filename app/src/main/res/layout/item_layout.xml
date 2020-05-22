@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/employeename"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/spacing"
+                android:layout_marginStart="@dimen/spacing"
                 />
             </LinearLayout>
             <LinearLayout
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/salaryname"
-                android:layout_marginLeft="@dimen/spacing"
+                android:layout_marginStart="@dimen/spacing"
                 />
             </LinearLayout>
             <LinearLayout
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/agename"
-                android:layout_marginLeft="@dimen/spacing"
+                android:layout_marginStart="@dimen/spacing"
                />
             </LinearLayout>
             </LinearLayout>

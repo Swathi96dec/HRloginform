@@ -50,11 +50,11 @@ public class AdduserActivity extends AppCompatActivity implements View.OnClickLi
 
     if(connectivity) {
     apihelper service = Retrofitinstance.getRetrofitInstance().create(apihelper.class);
-    Call<apiclass> call = service.createdata(username.getText().toString(), Integer.parseInt(salary.getText().toString()), Integer.parseInt(age.getText().toString()));
+    Call<apiclass.data> call = service.createdata(username.getText().toString(), Integer.parseInt(salary.getText().toString()), Integer.parseInt(age.getText().toString()));
 
-    call.enqueue(new Callback<apiclass>() {
+    call.enqueue(new Callback<apiclass.data>() {
         @Override
-        public void onResponse(Call<apiclass> call, Response<apiclass> response) {
+        public void onResponse(Call<apiclass.data> call, Response<apiclass.data> response) {
             if (response.isSuccessful()) {
                 Toast.makeText(AdduserActivity.this, "User added succesfully", Toast.LENGTH_LONG).show();
                 res1[0]="success";
@@ -69,7 +69,7 @@ public class AdduserActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         @Override
-        public void onFailure(Call<apiclass> call, Throwable t) {
+        public void onFailure(Call<apiclass.data> call, Throwable t) {
             Toast.makeText(AdduserActivity.this, "User not added succesfully" + t.getMessage(), Toast.LENGTH_LONG).show();
             res1[0]="failed";
             loadHomepage();

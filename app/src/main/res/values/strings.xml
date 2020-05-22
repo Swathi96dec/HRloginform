@@ -11,5 +11,6 @@
     <string name="salary">Salary</string>
     <string name="age">Age</string>
     <string name="userslist">Users List</string>
+    <string name="OfficeLocation">Office Location</string>
 
 </resources>

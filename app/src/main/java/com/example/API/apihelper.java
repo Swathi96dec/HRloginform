@@ -10,7 +10,7 @@ public interface apihelper {
     Call<apiclass> getdata();
     @FormUrlEncoded
     @POST("create")
-   Call<apiclass>createdata(
+   Call<apiclass.data>createdata(
             @Field("name") String name,
             @Field("salary")   int salary,
             @Field("age")   int age
