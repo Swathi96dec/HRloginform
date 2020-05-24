@@ -4,19 +4,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.hrloginform.R;
-import com.example.hrloginform.ViewpageActivity;
 
-
-public class Viewpageradapter extends PagerAdapter implements View.OnClickListener {
+public class Viewpageradapter extends PagerAdapter  {
     private int [] layouts;
     private LayoutInflater Layoutinflater;
     private Context context;
-    ViewpageActivity page;
 
     public Viewpageradapter(int[] layouts,Context context) {
         this.layouts = layouts;
@@ -31,32 +27,24 @@ public class Viewpageradapter extends PagerAdapter implements View.OnClickListen
     }
 
     @Override
-    public boolean isViewFromObject(View view,  Object object) {
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view==object;
     }
 
 
+    @NonNull
     @Override
-    public Object instantiateItem( ViewGroup container, int position) {
+    public Object instantiateItem( @NonNull ViewGroup container, int position) {
         View view=Layoutinflater.inflate(layouts[position],container,false);
         container.addView(view);
-        Button nextbutton = view.findViewById(R.id.next);
 
         return view;
     }
 
     @Override
-    public void destroyItem( ViewGroup container, int position, Object object) {
+    public void destroyItem( ViewGroup container, int position, @NonNull Object object) {
         View view=(View)object;
         container.removeView(view);
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.next)
-        {
-           page.sethomepage();
-        }
-
-    }
 }
