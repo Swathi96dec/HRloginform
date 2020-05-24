@@ -9,26 +9,19 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.API.Retrofitinstance;
-
-import com.example.API.apiclass;
-import com.example.API.apihelper;
+import com.example.Interfaces.IAdduser;
+import com.example.Interfaces.Ipresenter;
+import com.example.Presenter.Presenter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class AdduserActivity extends AppCompatActivity implements View.OnClickListener {
+public class AdduserActivity extends AppCompatActivity implements IAdduser, View.OnClickListener {
     EditText username, salary, age;
     Button submit;
-    final String[] res1 = new String[1];
+   // final String[] res1 = new String[1];
+    Ipresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +33,11 @@ public class AdduserActivity extends AppCompatActivity implements View.OnClickLi
         age = findViewById(R.id.age);
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(this);
+        presenter = new Presenter(this);
 
     }
 
-    private void Adddata() {
+   /* private void Adddata() {
 
         boolean connectivity;
         connectivity=checkconnectivity();
@@ -112,7 +106,7 @@ else {
                    }
 
                }
-    }
+    } */
     public void LoadHomepagewithdelay()
     {
         startActivity(new Intent(this,HomeActivity.class));
@@ -132,22 +126,27 @@ else {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.submit) {
-
             boolean res;
             res=validatedata();
-
+           // res=validatedata();
             if(res)
             {
-                Adddata();
+                if(checkconnectivity()) {
+                    presenter.adddata(username.getText().toString(), Integer.parseInt(salary.getText().toString()), Integer.parseInt(age.getText().toString()));
+                    //Adddata();
+                }
+                else
+                {
+                    Toast.makeText(this, "Please connect to Internet ", Toast.LENGTH_SHORT).show();
+                }
 
             }
-
 
         }
 
     }
-
-    private boolean validatedata() {
+@Override
+    public boolean validatedata() {
         boolean result = true;
         String regex;
         Matcher matcher;
@@ -192,5 +191,26 @@ else {
         return result;
         }
 
+    @Override
+    public void onadddataresponse(String message) {
+        if(message.equals("User added Succesfully"))
+        {
+            Toast.makeText(AdduserActivity.this, "User added succesfully", Toast.LENGTH_LONG).show();
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    //do something
+                    LoadHomepagewithdelay();
+                }
+            }, 5000 );
+        }
+
+        else
+        {
+            Toast.makeText(AdduserActivity.this, message, Toast.LENGTH_LONG).show();
+        }
+
     }
+}
 

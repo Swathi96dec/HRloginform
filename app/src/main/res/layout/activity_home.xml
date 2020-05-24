@@ -20,5 +20,10 @@
         android:text="@string/ViewALL"
         android:id="@+id/ViewALL"
         tools:ignore="ButtonStyle" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/officelocation"
+        android:text="@string/OfficeLocation" tools:ignore="ButtonStyle" />
 
 </LinearLayout>

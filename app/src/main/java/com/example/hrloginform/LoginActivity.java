@@ -16,7 +16,7 @@ import com.example.Presenter.Presenter;
 
 public class LoginActivity  extends AppCompatActivity implements ILoginView, View.OnClickListener {
     EditText username, password;
-    Button login,officelocation;
+    Button login;
     Ipresenter presenter;
 
     @Override
@@ -27,7 +27,6 @@ public class LoginActivity  extends AppCompatActivity implements ILoginView, Vie
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         login = findViewById(R.id.Login);
-        officelocation=findViewById(R.id.officelocation);
         login.setOnClickListener(this);
         presenter = new Presenter(this);
     }
