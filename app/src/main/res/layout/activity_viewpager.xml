@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/dots"
         android:orientation="horizontal"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center_horizontal"
         />
     <Button
         android:id="@+id/next"
@@ -24,7 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/Next" />
+        android:text="@string/Next"
+        />
 
 
 </LinearLayout>
