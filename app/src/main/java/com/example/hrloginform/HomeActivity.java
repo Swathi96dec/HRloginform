@@ -40,7 +40,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             {
                 if(v.getId()==R.id.officelocation)
                 {
+                    /*   to go to google map app in phone
                     Uri gmmIntentUri = Uri.parse("geo:17.3850,78.4867");
+
 
 // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
@@ -50,6 +52,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     if (mapIntent.resolveActivity(getPackageManager()) != null) {
                         startActivity(mapIntent);
                     }
+                    */
+                    startActivity(new Intent(this,MapsActivity.class));
+
 
 // Attempt to start an activity that can handle the Intent
 

@@ -13,5 +13,6 @@
     <string name="userslist">Users List</string>
     <string name="OfficeLocation">Office Location</string>
     <string name="Next">Next</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

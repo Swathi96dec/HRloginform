@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.Interfaces.ILoginView;
 import com.example.Interfaces.Ipresenter;
 import com.example.Presenter.Presenter;
@@ -66,4 +64,7 @@ public class LoginActivity  extends AppCompatActivity implements ILoginView, Vie
 
 
     }
-}
+
+
+    }
+
