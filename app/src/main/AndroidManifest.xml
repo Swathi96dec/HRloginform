@@ -47,7 +47,6 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".AdduserActivity" />
         <activity android:name=".EmployeelistActivity" />
-        <activity android:name="com.example.adapter.Viewpageradapter" />
     </application>
 
 </manifest>
